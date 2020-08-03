@@ -13,14 +13,21 @@ public class MommifierTest {
     @Test
     void should_return_string_when_convert_given_string_vowels_not_more_than_30() {
         Mommifier mommifier = new Mommifier();
-        String result = mommifier.convert("abcdefghgh");
-        assertEquals("abcdefghgh", result);
+        String result = mommifier.convert("abcdefghGH");
+        assertEquals("abcdefGH", result);
     }
 
     @Test
     void should_return_string_insert_mommy_when_convert_given_string_vowels_more_than_30_with_continuous_vowels() {
-    Mommifier mommifier = new Mommifier();
-    String result = mommifier.convert("aacdeeefgh");
-    assertEquals("amommyacdemommyemommyefgh", result);
+        Mommifier mommifier = new Mommifier();
+        String result = mommifier.convert("aacdEeefGH");
+        assertEquals("amommyacdEmommyemommyefGH", result);
+    }
+
+    @Test
+    void should_return_string_not_insert_mommy_when_convert_given_string_vowels_more_than_30_without_continuous_vowels() {
+        Mommifier mommifier = new Mommifier();
+        String result = mommifier.convert("abcdEfGiHo");
+        assertEquals("abcdEfGiHo", result);
     }
 }
