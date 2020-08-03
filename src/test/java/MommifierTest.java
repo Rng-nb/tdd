@@ -9,4 +9,11 @@ public class MommifierTest {
         String result = mommifier.convert("");
         assertEquals("", result);
     }
+
+    @Test
+    void should_return_string_when_convert_given_string_vowels_not_more_than_30() {
+        Mommifier mommifier = new Mommifier();
+        String result = mommifier.convert("abcdefghgh");
+        assertEquals("abcdefghgh", result);
+    }
 }
