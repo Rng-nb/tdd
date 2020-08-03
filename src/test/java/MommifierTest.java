@@ -16,4 +16,11 @@ public class MommifierTest {
         String result = mommifier.convert("abcdefghgh");
         assertEquals("abcdefghgh", result);
     }
+
+    @Test
+    void should_return_string_insert_mommy_when_convert_given_string_vowels_more_than_30_with_continuous_vowels() {
+    Mommifier mommifier = new Mommifier();
+    String result = mommifier.convert("aacdeeefgh");
+    assertEquals("amommyacdemommyemommyefgh", result);
+    }
 }
